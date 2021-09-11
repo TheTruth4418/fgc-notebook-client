@@ -2,7 +2,7 @@ export const getChars = () => {
     let token = localStorage.token
     if(token){
         return (dispatch) => {
-            fetch( 'http://127.0.0.1:3000/characters', {
+            fetch( 'http://https://cryptic-brook-94814.herokuapp.com/characters', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -25,7 +25,7 @@ export const newNote = (noteObj) => {
     let token = localStorage.token
     if(token){
         return (dispatch) => {
-            fetch('http://127.0.0.1:3000/character_notes/new', {
+            fetch('http://https://cryptic-brook-94814.herokuapp.com/character_notes/new', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export const newMuNote = (noteObj) => {
     let token = localStorage.token
     if(token){
         return (dispatch) => {
-            fetch('http://127.0.0.1:3000/matchup_notes/new', {
+            fetch('http://https://cryptic-brook-94814.herokuapp.com/matchup_notes/new', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export const newBulletPoint = (pointObj, currentObj) => {
     let token = localStorage.token
     if(token){
         return (dispatch) => {
-            fetch('http://127.0.0.1:3000/bullet_points/new', {
+            fetch('http://https://cryptic-brook-94814.herokuapp.com/bullet_points/new', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -84,7 +84,7 @@ export const getGames = () => {
     let token = localStorage.token
     if(token){
         return (dispatch) => {
-            fetch('http://127.0.0.1:3000/games', {
+            fetch('http://https://cryptic-brook-94814.herokuapp.com/games', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -106,7 +106,7 @@ export const fetchNotes = (obj) => {
     let token = localStorage.token
     if(token){
         return (dispatch) => {
-            fetch(`http://127.0.0.1:3000/${obj.game}/${obj.character}/notes`, {
+            fetch(`http://https://cryptic-brook-94814.herokuapp.com/${obj.game}/${obj.character}/notes`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -134,7 +134,7 @@ export const fetchMatchupNotes = (obj) => {
         }
     } else {
     return (dispatch) => {
-        fetch(`http://127.0.0.1:3000/${obj.game}/${obj.character}/${obj.opponent}/notes`, {
+        fetch(`http://https://cryptic-brook-94814.herokuapp.com/${obj.game}/${obj.character}/${obj.opponent}/notes`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -159,7 +159,7 @@ export const deletePoint = (dataObj) => {
         let choice = window.confirm("Are you sure you want to delete this point?")
         if (choice === true){
         return (dispatch) => {
-            fetch(`http://127.0.0.1:3000/bullet_points/${dataObj.id}/delete`, {
+            fetch(`http://https://cryptic-brook-94814.herokuapp.com/bullet_points/${dataObj.id}/delete`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -182,7 +182,7 @@ export const deleteNote = (dataObj) => {
     let token = localStorage.token
     if(token){
         let url;
-        dataObj.type === 'char' ? url = `http://127.0.0.1:3000/character_notes/${dataObj.id}/delete`: url = `http://127.0.0.1:3000/matchup_notes/${dataObj.id}/delete`
+        dataObj.type === 'char' ? url = `http://https://cryptic-brook-94814.herokuapp.com/character_notes/${dataObj.id}/delete`: url = `http://https://cryptic-brook-94814.herokuapp.com/matchup_notes/${dataObj.id}/delete`
         let choice = window.confirm("Are you sure you want to delete this Note?")
         if (choice === true){
         return (dispatch) => {
@@ -217,7 +217,7 @@ export const refreshCurrentNote = () => {
   
 export const postSignup = userObj => {
     return dispatch => {
-      return fetch("http://127.0.0.1:3000/signup", {
+      return fetch("http://https://cryptic-brook-94814.herokuapp.com/signup", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
