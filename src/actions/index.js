@@ -243,7 +243,7 @@ export const postSignup = userObj => {
     let state = userObj.state
     console.log(state)
     return dispatch => {
-      return fetch("http://localhost:3000/login", {
+      return fetch("http://cryptic-brook-94814.herokuapp.com/login", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -278,7 +278,7 @@ export const logoutUser = () => ({
   return dispatch => {
     const token = localStorage.token;
     if (token) {
-      return fetch("http://localhost:3000/user", {
+      return fetch("http://cryptic-brook-94814.herokuapp.com/user", {
         method: "GET",
         headers: {
           'Content-Type': 'application/json',
